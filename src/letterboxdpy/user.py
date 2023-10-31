@@ -60,7 +60,7 @@ class User:
     def user_watchlist(self) -> str:
         page = self.get_parsed_page("https://letterboxd.com/" + self.username + "/watchlist/")
 
-        data = page.find("span", {"class": ["watchlist-count"], })
+        data = page.find("span", {"class": ["value"], })
         try:
             ret = data.text.split('\xa0')[0] #remove 'films' from '76 films'
         except:
